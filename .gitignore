@@ -1,0 +1,11 @@
+.DS_Store
+plugin.xml
+
+*.iml
+*.zip
+*.zip.sha1
+
+.idea/
+out
+target
+

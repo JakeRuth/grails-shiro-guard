@@ -1,0 +1,1 @@
+grails-shiro-guard-plugin
