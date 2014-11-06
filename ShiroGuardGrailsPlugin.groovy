@@ -7,7 +7,7 @@ import org.codehaus.groovy.grails.plugins.web.filters.FilterConfig
 
 class ShiroGuardGrailsPlugin {
 
-    def version = "0.1"
+    def version = "0.0.1"
 
     def grailsVersion = "2.2.4 > *"
 
@@ -18,7 +18,10 @@ class ShiroGuardGrailsPlugin {
     def title = "Grails Shiro Guard Plugin"
     def author = "Jake Ruth"
     def authorEmail = "jruth@commercehub.com"
-    def description = 'This plugin introduces a new artefact type called Guard.'
+    def description = 'This plugin is built on top of shiro.  ' +
+            'It provides a grails guard artifact that is used to guard access to your controllers using shiro permission strings.'
+
+    def organization = [ name: "CommerceHub", url: "http://www.commercehub.com/" ]
 
     def artefacts = [ GuardArtefactHandler ]
 
