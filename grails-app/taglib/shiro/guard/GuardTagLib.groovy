@@ -20,7 +20,10 @@ class GuardTagLib {
         def guardBean = Holders.applicationContext.getBean(controller + GuardArtefactHandler.TYPE)
         String permissionString = guardBean.buildPermissionString(action, [id: id])
 
-        if (guardBean.hasPermission(action, [id: id])) {
+        if (SecurityUtils.subject.isPermitted(permissionString)) {
+            out << body()
+        }
+        else if (guardBean.hasPermission(action, [id: id])) {
             out << body()
         }
     }
