@@ -1,0 +1,4 @@
+DefaultPackage
+com.commercehub.grails.shiro
+com.commercehub.grails.shiro.guard
+shiro.guard
