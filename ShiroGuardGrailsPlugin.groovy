@@ -21,6 +21,10 @@ class ShiroGuardGrailsPlugin {
     def description = 'This plugin is built on top of shiro.  ' +
             'It provides a grails guard artifact that is used to guard access to your controllers using shiro permission strings.'
 
+    def documentation = 'http://commercehub-oss.github.io/grails-shiro-guard/'
+    def issueManagement = [ url: 'https://github.com/commercehub-oss/grails-shiro-guard/issues' ]
+    def scm = [ url: 'https://github.com/commercehub-oss/grails-shiro-guard' ]
+    def license = 'APACHE'
     def organization = [ name: "CommerceHub", url: "http://www.commercehub.com/" ]
 
     def artefacts = [ GuardArtefactHandler ]
