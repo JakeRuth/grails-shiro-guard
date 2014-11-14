@@ -5,6 +5,6 @@ This plugin builds upon the excellent [Apache Shiro Plugin](http://grails.org/pl
 The plugin is available [here](http://grails.org/plugin/shiro-guard).
 
 # License
-This library is available under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
+This plugin is available under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
 
 (c) All rights reserved Commerce Technologies, Inc.
