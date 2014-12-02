@@ -5,6 +5,8 @@ import org.apache.shiro.SecurityUtils
 import org.apache.shiro.realm.AuthorizingRealm
 import org.codehaus.groovy.grails.plugins.web.filters.FilterConfig
 
+import java.security.InvalidParameterException
+
 class ShiroGuardGrailsPlugin {
 
     def version = "0.0.1"
@@ -76,18 +78,22 @@ class ShiroGuardGrailsPlugin {
         def guardArtefact = getGuardArtefact(guardArtefactIdentifier)
 
         if (guardArtefact && isUserAuthenticated()) {
-            def guardBean = Holders.applicationContext.getBean(controllerName + GuardArtefactHandler.TYPE)
-            String permissionString = guardBean.buildPermissionString(actionName, params)
+            try {
+                def guardBean = Holders.applicationContext.getBean(controllerName + GuardArtefactHandler.TYPE)
+                String permissionString = guardBean.buildPermissionString(actionName, params)
 
-            if (currentUserHasPermission(permissionString)) {
-                return true
-            } else {
-                boolean isUserPermitted = guardBean.hasPermission(actionName, params)
+                if (currentUserHasPermission(permissionString)) {
+                    return true
+                } else {
+                    boolean isUserPermitted = guardBean.hasPermission(actionName, params)
 
-                if (isUserPermitted) {
-                    addPermissionStringForCurrentSession(permissionString)
+                    if (isUserPermitted) {
+                        addPermissionStringForCurrentSession(permissionString)
+                    }
+                    return isUserPermitted
                 }
-                return isUserPermitted
+            } catch (InvalidParameterException ex) {
+                return false
             }
         }
         return false
