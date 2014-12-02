@@ -4,7 +4,6 @@ import grails.util.Holders
 import org.apache.shiro.SecurityUtils
 import org.apache.shiro.realm.AuthorizingRealm
 import org.codehaus.groovy.grails.plugins.web.filters.FilterConfig
-import java.security.InvalidParameterException
 
 class ShiroGuardGrailsPlugin {
 
@@ -91,7 +90,7 @@ class ShiroGuardGrailsPlugin {
                     }
                     return isUserPermitted
                 }
-            } catch (InvalidParameterException ex) {
+            } catch (IllegalArgumentException ex) {
                 return false
             }
         }
