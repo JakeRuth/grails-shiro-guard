@@ -1,7 +1,8 @@
-Below is the history of Grails Shiro Guard plugin releases.
+h4. 0.1.0 (December 4, 2014)
+* Added logic to catch IllegalArgumentExceptions that may be thrown from guards.
 
-h4. 0.0.1 (October 22nd, 2014)
-* First public release.
+h4. 0.0.2 (November 18, 2014)
+* Updated plugin descriptor
 
-h4. 0.0.3 (December 2nd, 2014)
-* Added logic in guard to catch illegalArguementExceptions that may be thrown from guards.
+h4. 0.0.1 (October 22, 2014)
+* First public release
